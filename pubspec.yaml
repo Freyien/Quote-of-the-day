@@ -1,0 +1,46 @@
+name: phrase_of_the_day
+description: A new Flutter project.
+
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.1 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+
+  # State managment
+  flutter_bloc: ^8.0.1
+
+  # Image
+  cached_network_image: ^3.2.0
+
+  # Http
+  dio: ^4.0.4
+
+  # UI
+  bot_toast: ^4.0.1
+
+  # Auth
+  local_auth: ^1.1.11
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+  mocktail: ^0.2.0
+  bloc_test: ^9.0.2
+  http_mock_adapter: ^0.3.2
+  mockingjay: ^0.2.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
