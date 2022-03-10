@@ -267,5 +267,30 @@ void main() {
       expect(find.byKey(const Key('errorToast')), findsOneWidget);
       expect(find.text('Ha ocurrido un error inesperado :p'), findsOneWidget);
     });
+
+    testWidgets(
+        'Should emit LoginWithEmailAndPasswordEvent when login button is pressed',
+        (tester) async {
+      // Arrange
+      const email = 'freyien@fondeadora.com';
+      const password = '123456';
+
+      when(() => mockAuthBloc.state).thenReturn(InitialState());
+
+      // Act
+      await tester.pumpWidget(
+        BlocProvider<AuthBloc>.value(
+          value: mockAuthBloc,
+          child: const MaterialApp(home: LoginView()),
+        ),
+      );
+
+      await tester.enterText(find.byKey(const Key('emailInput')), email);
+      await tester.enterText(find.byKey(const Key('passwordInput')), password);
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byKey(const Key('loginButton')));
+      await tester.pumpAndSettle();
+    });
   });
 }

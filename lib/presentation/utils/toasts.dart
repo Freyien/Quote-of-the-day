@@ -7,11 +7,10 @@ class Toast {
     _showToast(const Key('errorToast'), message, AppColors.error);
   }
 
-  static _showToast(Key? key, String message, Color color,
-      {bool showCloseButton = false}) {
+  static _showToast(Key? key, String message, Color color) {
     BotToast.showCustomNotification(
       align: Alignment.topCenter,
-      duration: Duration(milliseconds: showCloseButton ? 5000 : 3500),
+      duration: const Duration(milliseconds: 3500),
       toastBuilder: (cancel) {
         return SizedBox(
           key: key,
@@ -29,12 +28,10 @@ class Toast {
                 ),
                 textAlign: TextAlign.center,
               ),
-              trailing: showCloseButton
-                  ? IconButton(
-                      icon: const Icon(Icons.close, color: Colors.white),
-                      onPressed: cancel,
-                    )
-                  : null,
+              trailing: IconButton(
+                icon: const Icon(Icons.close, color: Colors.white),
+                onPressed: cancel,
+              ),
             ),
           ),
         );
