@@ -15,12 +15,14 @@ class AuthRemoteImpl implements AuthRepository {
   }
 
   @override
-  Future<bool> isDeviceSupportedBiometrics() {
-    throw UnimplementedError();
+  Future<bool> isDeviceSupportedBiometrics() async {
+    // Not implementes in local
+    return true;
   }
 
   @override
-  Future<AuthUser> loginWithBiometrics() {
-    throw UnimplementedError();
+  Future<AuthUser> loginWithBiometrics() async {
+    // Not implementes in local
+    return AuthUser(id: 1, username: 'Freyien');
   }
 }

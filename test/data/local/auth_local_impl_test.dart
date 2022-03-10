@@ -100,4 +100,18 @@ void main() {
       );
     });
   });
+
+  group('loginWithEmailAndPassword', () {
+    test('Should return AuthUser', () async {
+      // Arrange
+
+      // Act
+      final result =
+          await authRepository.loginWithEmailAndPassword('email', 'password');
+
+      // Assert
+      expect(result, isNotNull);
+      expect(result, isA<AuthUser>());
+    });
+  });
 }

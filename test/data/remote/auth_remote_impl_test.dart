@@ -53,4 +53,30 @@ void main() {
       );
     });
   });
+
+  group('isDeviceSupportedBiometrics', () {
+    test('Should return true', () async {
+      // Arrange
+
+      // Act
+      final result = await authRepository.isDeviceSupportedBiometrics();
+
+      // Assert
+      expect(result, isNotNull);
+      expect(result, true);
+    });
+  });
+
+  group('loginWithBiometrics', () {
+    test('Should return AuthUser', () async {
+      // Arrange
+
+      // Act
+      final result = await authRepository.loginWithBiometrics();
+
+      // Assert
+      expect(result, isNotNull);
+      expect(result, isA<AuthUser>());
+    });
+  });
 }

@@ -38,7 +38,9 @@ class AuthLocalImpl implements AuthRepository {
   }
 
   @override
-  Future<AuthUser> loginWithEmailAndPassword(String email, String password) {
-    throw UnimplementedError();
+  Future<AuthUser> loginWithEmailAndPassword(
+      String email, String password) async {
+    // Not implementes in local
+    return AuthUser(id: 1, username: 'Freyien');
   }
 }
