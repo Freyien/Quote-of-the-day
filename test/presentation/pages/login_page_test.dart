@@ -168,6 +168,10 @@ void main() {
   });
 
   group('login', () {
+    setUpAll(() {
+      registerFallbackValue(LoginWithEmailAndPasswordEvent());
+      registerFallbackValue(LoginWithBiometricsEvent());
+    });
     testWidgets('Should navigate to another page when SuccessState is emitted',
         (tester) async {
       // Arrange
@@ -291,6 +295,29 @@ void main() {
 
       await tester.tap(find.byKey(const Key('loginButton')));
       await tester.pumpAndSettle();
+
+      verify(() => mockAuthBloc.add(any<LoginWithEmailAndPasswordEvent>()));
+    });
+
+    testWidgets(
+        'Should emit LoginWithBiometricsEvent when login with biometrics button is pressed',
+        (tester) async {
+      // Arrange
+      when(() => mockAuthBloc.state).thenReturn(BiometricsCheckedState(true));
+
+      // Act
+      await tester.pumpWidget(
+        BlocProvider<AuthBloc>.value(
+          value: mockAuthBloc,
+          child: const MaterialApp(home: LoginView()),
+        ),
+      );
+
+      await tester.tap(find.byKey(const Key('loginWithBiometricsButton')));
+      await tester.pumpAndSettle();
+
+      // Assert
+      verify(() => mockAuthBloc.add(any<LoginWithBiometricsEvent>()));
     });
   });
 }

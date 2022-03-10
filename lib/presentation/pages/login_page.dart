@@ -177,6 +177,7 @@ class _BiometricsOptionButton extends StatelessWidget {
 
               // BiometricsButton
               SecondaryButton(
+                key: const Key('loginWithBiometricsButton'),
                 onPressed: () {
                   context.read<AuthBloc>().add(LoginWithBiometricsEvent());
                 },
