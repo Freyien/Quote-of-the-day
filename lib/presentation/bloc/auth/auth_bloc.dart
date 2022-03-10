@@ -32,6 +32,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   void _emailChangedEvent(EmailChangedEvent event, Emitter<AuthState> emit) {
     _email = event.email;
+    emit(EmailChangedState());
   }
 
   void _passwordChangedEvent(
@@ -39,6 +40,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     Emitter<AuthState> emit,
   ) {
     _password = event.password;
+    emit(PasswordChangedState());
   }
 
   void _loginWithEmailAndPasswordEvent(

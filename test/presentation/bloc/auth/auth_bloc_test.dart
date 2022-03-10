@@ -243,4 +243,34 @@ void main() {
       },
     );
   });
+
+  group('EmailChangedEvent', () {
+    blocTest<AuthBloc, AuthState>(
+      'Update email value.',
+      build: () => AuthBloc(
+        mockLoginWithEmailAndPasswordUseCase,
+        mockIsDeviceSupportedBiometricsUseCase,
+        mockLoginWithBiometricsUseCase,
+      ),
+      act: (bloc) => bloc.add(EmailChangedEvent('email')),
+      expect: () => [
+        isA<EmailChangedState>(),
+      ],
+    );
+  });
+
+  group('PasswordChangedEvent', () {
+    blocTest<AuthBloc, AuthState>(
+      'Update password value.',
+      build: () => AuthBloc(
+        mockLoginWithEmailAndPasswordUseCase,
+        mockIsDeviceSupportedBiometricsUseCase,
+        mockLoginWithBiometricsUseCase,
+      ),
+      act: (bloc) => bloc.add(PasswordChangedEvent('password')),
+      expect: () => [
+        isA<PasswordChangedState>(),
+      ],
+    );
+  });
 }

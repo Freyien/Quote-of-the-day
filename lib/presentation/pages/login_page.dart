@@ -53,9 +53,7 @@ class LoginView extends StatelessWidget {
 }
 
 class _EmailAndPasswordForm extends StatelessWidget {
-  const _EmailAndPasswordForm({
-    Key? key,
-  }) : super(key: key);
+  const _EmailAndPasswordForm({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

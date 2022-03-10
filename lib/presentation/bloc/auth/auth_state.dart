@@ -22,3 +22,7 @@ class SuccessState extends AuthState {
 class AuthFailedState extends AuthState {}
 
 class ServerFailedState extends AuthState {}
+
+class EmailChangedState extends AuthState {}
+
+class PasswordChangedState extends AuthState {}

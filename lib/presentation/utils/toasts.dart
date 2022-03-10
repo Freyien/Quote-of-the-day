@@ -7,11 +7,6 @@ class Toast {
     _showToast(const Key('errorToast'), message, AppColors.error);
   }
 
-  void showSuccessToast(String message) {
-    _showToast(const Key('successToast'), message, AppColors.success,
-        showCloseButton: true);
-  }
-
   static _showToast(Key? key, String message, Color color,
       {bool showCloseButton = false}) {
     BotToast.showCustomNotification(
