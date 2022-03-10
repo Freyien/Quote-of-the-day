@@ -83,7 +83,7 @@ Fondeadora Mobile Software Engineer Coding Test
 4. run `flutter test --coverage`
 5. run `genhtml coverage/lcov.info -o coverage/html`
 
-<img src='https://github.com/Freyien/Quote-of-the-day/blob/master/assets/project/coverage.jpg' width="250">
+<img src='https://github.com/Freyien/Quote-of-the-day/blob/master/assets/project/coverage.jpg'>
 
 
 # Extra
