@@ -37,7 +37,7 @@ Fondeadora Mobile Software Engineer Coding Test
 
  ### Quote of the day:
  - Request to `https://quotes.rest/`
-    - `IMPORTANT`: The account free only support 10 request per hour.
+    - `IMPORTANT`: The free account only support 10 request per hour.
     - After 10 requests the app shows the message "Ha ocurrido un error"
     - The phrase/quote change by day not by request
 - Background image
