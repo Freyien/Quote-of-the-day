@@ -42,7 +42,7 @@ Fondeadora Mobile Software Engineer Coding Test
     - The phrase/quote change by day not by request
 - Background image
     - From request response if exists
-    - else shows an default image
+    - else shows a default image
 - Quote and author is from request response
 - Error toast when occurs an error
 
